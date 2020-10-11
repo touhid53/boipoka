@@ -1,0 +1,14 @@
+# add automatic trailing file extension 
+# or work without .php file extension
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+#page not found error page
+ErrorDocument 404 /index.php
+
+#no permission error page 
+ErrorDocument 403 /view/noPage.php

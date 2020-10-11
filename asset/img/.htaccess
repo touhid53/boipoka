@@ -1,0 +1,6 @@
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+#deny from all
+ErrorDocument 404 /index.php
+ErrorDocument 403 /index.php
